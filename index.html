@@ -178,48 +178,67 @@
                 bindEvent(window, 'message', function (e) {
                     // console.log(e.data);
                     var res = e.data.split(",");
-                    if (Number(res[3]) == 1){
-                        var terminal = document.getElementById('terminal_lines');
-                        // terminal.contentEditable = true;
+                    document.getElementById('output-box').innerHTML = res[0];
+                    // if (Number(res[3]) == 1){
+                    //     var terminal = document.getElementById('terminal_lines');
+                    //     // terminal.contentEditable = true;
 
-                        var str = terminal.lastChild.previousSibling.innerHTML;
-    
-                        var curr_line = str.substring(28, 30);
-                        console.log('previous line : ', curr_line);
-                        var curr_line = curr_line.substring(1, curr_line.lenght);
-                        console.log('line no: ', curr_line);
-                        var new_line = Number(curr_line)+1;
+                    //     try {
+                    //         var str = terminal.lastChild.previousSibling.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     } catch (error) {
+                    //         var str = terminal.lastChild.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     }
                         
-                        div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
-                        div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
-                        div.id = 'line'+(new_line);
+                    //     div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
+                    //     div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
+                    //     div.id = 'line'+(new_line);
 
-                        terminal.appendChild(div);
+                    //     terminal.appendChild(div);
 
-                        document.getElementById('output-box').innerHTML = 'error occured';
-                    }
-                    else{
-                        var terminal = document.getElementById('terminal_lines');
-                        // terminal.contentEditable = true;
+                    //     document.getElementById('output-box').innerHTML = 'error occured';
+                    // }
+                    // else{
+                    //     var terminal = document.getElementById('terminal_lines');
+                    //     // terminal.contentEditable = true;
 
-                        var str = terminal.lastChild.previousSibling.innerHTML;
-                        console.log('last child : ', str);
-                        
-    
-                        var curr_line = str.substring(28, 30);
-                        console.log('previous line : ', curr_line);
-                        var curr_line = curr_line.substring(1, curr_line.lenght);
-                        console.log('line no: ', curr_line);
-                        var new_line = Number(curr_line)+1;
-                        
-                        div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
-                        div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
-                        div.id = 'line'+(Number(curr_line)+1);
+                    //     try {
+                    //         var str = terminal.lastChild.previousSibling.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     } catch (error) {
+                    //         var str = terminal.lastChild.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     }
 
-                        terminal.appendChild(div);
+                    //     div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
+                    //     div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
+                    //     div.id = 'line'+(Number(curr_line)+1);
 
-                        document.getElementById('output-box').innerHTML = res[0];
-                    }
+                    //     terminal.appendChild(div);
+
+                    //     document.getElementById('output-box').innerHTML = res[0];
+                    // }
                 });
             }
 
