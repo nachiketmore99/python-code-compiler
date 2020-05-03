@@ -185,11 +185,14 @@
                         var str = terminal.lastChild.previousSibling.innerHTML;
     
                         var curr_line = str.substring(28, 30);
+                        console.log('previous line : ', curr_line);
                         var curr_line = curr_line.substring(1, curr_line.lenght);
+                        console.log('line no: ', curr_line);
+                        var new_line = Number(curr_line)+1;
                         
                         div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
-                        div.innerHTML = '<span style="color: black;">l'+curr_line+'</span>'+">>>&nbsp;"+ res[0]; 
-                        div.id = 'line'+(Number(curr_line)+1);
+                        div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
+                        div.id = 'line'+(new_line);
 
                         terminal.appendChild(div);
 
@@ -202,10 +205,13 @@
                         var str = terminal.lastChild.previousSibling.innerHTML;
     
                         var curr_line = str.substring(28, 30);
+                        console.log('previous line : ', curr_line);
                         var curr_line = curr_line.substring(1, curr_line.lenght);
+                        console.log('line no: ', curr_line);
+                        var new_line = Number(curr_line)+1;
                         
                         div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
-                        div.innerHTML = '<span style="color: black;">l'+curr_line+'</span>'+">>>&nbsp;"+ res[0]; 
+                        div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
                         div.id = 'line'+(Number(curr_line)+1);
 
                         terminal.appendChild(div);
