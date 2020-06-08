@@ -69,7 +69,8 @@
   
     // a unique random key generator
     function getUniqueId () {
-      return 'private-' + Math.random().toString(36).substr(2, 9);
+      // return 'private-' + Math.random().toString(36).substr(2, 9);
+      return 'private-' + 'test';
     }
     // function to get a query param's value
     function getUrlParameter(name) {
