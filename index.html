@@ -63,40 +63,6 @@
             })
         </script>
 
-        <script>
-            // sending messag to Parent
-
-            // addEventListener support for IE8
-                function bindEvent(element, eventName, eventHandler) {
-                    if (element.addEventListener) {
-                        element.addEventListener(eventName, eventHandler, false);
-                    } else if (element.attachEvent) {
-                        element.attachEvent('on' + eventName, eventHandler);
-                    }
-                }
-
-                // Send a message to the parent
-                var sendMessage = function (msg) {
-                    // Make sure you are sending a string, and to stringify JSON
-                    window.parent.postMessage(msg, '*');
-                };
-
-                // Send random message data on every button click
-                // bindEvent(editor[0], 'click', function (e) {
-                //     sendMessage('' + 'edited');
-                // });
-                bindEvent(window, 'message', function (e) {
-                    var msg = e.data.split(',')
-                        var editor_python = ace.edit("editor_python");
-                        
-                    if(msg[0]=='req-code'){
-                        sendMessage('' + editor_python.getValue())    
-                    }
-                    else if(msg[0]=='set-code'){
-                        editor_python.setValue(msg[1]);
-                    }
-                });
-        </script>
 
         <script src="js/ace.js" type="text/javascript" charset="utf-8"></script>
 
@@ -274,5 +240,41 @@
             }
 
         </script>
+
+        <script>
+            // sending messag to Parent
+
+            // addEventListener support for IE8
+                function bindEvent(element, eventName, eventHandler) {
+                    if (element.addEventListener) {
+                        element.addEventListener(eventName, eventHandler, false);
+                    } else if (element.attachEvent) {
+                        element.attachEvent('on' + eventName, eventHandler);
+                    }
+                }
+
+                // Send a message to the parent
+                var sendMessage = function (msg) {
+                    // Make sure you are sending a string, and to stringify JSON
+                    window.parent.postMessage(msg, '*');
+                };
+
+                // Send random message data on every button click
+                // bindEvent(editor[0], 'click', function (e) {
+                //     sendMessage('' + 'edited');
+                // });
+                bindEvent(window, 'message', function (e) {
+                    var msg = e.data.split(',')
+                        var editor_python = ace.edit("editor_python");
+                        
+                    if(msg[0]=='req-code'){
+                        sendMessage('' + editor_python.getValue())    
+                    }
+                    else if(msg[0]=='set-code'){
+                        editor_python.setValue(msg[1]);
+                    }
+                });
+        </script>
+        
     </body>
 </html>
